@@ -38,7 +38,7 @@ function printNumbers(start, end) {
     if (current > end) {
       clearInterval(intervalId);
     }
-  }, 1000); // 1000ms = 1s
+  }, 1000); 
 }
 
 printNumbers(5, 15);
@@ -66,5 +66,5 @@ function countEvenOddAndZero(arr) {
   console.log(`Zero count: ${zeroCount}`);
 }
 
-// Test the function
+
 countEvenOddAndZero([1, 2, 3, 4, 5, 0, 'a', null, 7, 8, 9]);
