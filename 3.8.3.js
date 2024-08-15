@@ -4,32 +4,6 @@ console.log(power(2, 3));
 console.log(power(5, 2));
 console.log(power(3, 4)); 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-def is_prime(n):
-if n > 1000:
-return "Данные неверны"
-elif n <= 1:
-return "Нет"
-else:
-for i in range(2, n):
-if n % i == 0:
-return "Нет"
-return "Да"
-
-print(is_prime(13)) # Да
-print(is_prime(15)) # Нет
-print(is_prime(0)) # Нет
-print(is_prime(1)) # Нет
-print(is_prime(1001)) # Данные неверны
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-def outer_func(x):
-def inner_func(y):
-return x + y
-return inner_func
-
-result = outer_func(5)
-print(result(10)) # Output: 15
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
 function printNumbers(start, end) {
   let current = start;
   let intervalId = setInterval(() => {
@@ -42,6 +16,37 @@ function printNumbers(start, end) {
 }
 
 printNumbers(5, 15);
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function outer_func(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+
+const result = outer_func(5);
+console.log(result(10)); // Output: 15
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+function is_prime(n) {
+  if (n > 1000) {
+    return "Данные неверны";
+  } else if (n <= 1) {
+    return "Нет";
+  } else {
+    for (let i = 2; i < n; i++) {
+      if (n % i === 0) {
+        return "Нет";
+      }
+    }
+    return "Да";
+  }
+}
+
+console.log(is_prime(13)); // Да
+console.log(is_prime(15)); // Нет
+console.log(is_prime(0)); // Нет
+console.log(is_prime(1)); // Нет
+console.log(is_prime(1001)); 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 function countEvenOddAndZero(arr) {
